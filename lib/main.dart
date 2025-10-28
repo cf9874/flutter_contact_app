@@ -12,28 +12,53 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home:Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: Text('asd',
+          actions: [
+            Icon(Icons.star,color: Colors.white,),
+            Icon(Icons.star,color: Colors.white,),
+            Icon(Icons.star,color: Colors.white,),
+          ],
+          leading: Icon(Icons.star,color: Colors.white,),
+          // centerTitle: true,
+          title: Text('Te',
          style: TextStyle(
            color: Colors.white
          ),),
             backgroundColor: Colors.blue,
         ),
-        body: Column(
-          children: const
-          [Icon(Icons.star),
-            Icon(Icons.star),
-            Icon(Icons.star),
-          ],
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.end,
-        ), // 중앙부 구성
+        body:Center(
+          child: Column(
+
+            children: [
+              SizedBox(
+                child: Text('안녕하세요',style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700
+                ),),
+              ),
+             Row(
+               children: [
+                 IconButton(onPressed: ()=>(), icon: Icon(Icons.phone)
+                 ),
+                 TextButton(child:Text('TextButton'),onPressed: ()=>(),
+                 ),
+                 ElevatedButton(child: Text('ElevatedButton'),onPressed: ()=>(), ),
+               ],
+               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+             )
+
+            ],
+          ),
+        ),// 중앙부 구성
         bottomNavigationBar: BottomAppBar(
-          child: Row(
-            children: [Icon(Icons.call),
-              Icon(Icons.message),
-              Icon(Icons.contact_page),],
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // height: 20,
+          child:SizedBox(
+            child: Row(
+              children: [Icon(Icons.call),
+                Icon(Icons.message),
+                Icon(Icons.contact_page),],
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            ),
 
           ),
           color: Colors.white,
