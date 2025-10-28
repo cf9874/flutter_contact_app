@@ -10,12 +10,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Center(
-        // child: Text('asdsa')
-        //   child: Icon(Icons.safety_check)
-        // child: Image.asset('alp.jpg')
-        child: Container(width: 50,height: 50,color: Colors.cyan)
-      ),
+      home:Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('asd',
+         style: TextStyle(
+           color: Colors.white
+         ),),
+            backgroundColor: Colors.blue,
+        ),
+        body: Column(
+          children: const
+          [Icon(Icons.star),
+            Icon(Icons.star),
+            Icon(Icons.star),
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // crossAxisAlignment: CrossAxisAlignment.end,
+        ), // 중앙부 구성
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            children: [Icon(Icons.call),
+              Icon(Icons.message),
+              Icon(Icons.contact_page),],
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+          ),
+          color: Colors.white,
+        ),
+      )
     );
   }
 }
